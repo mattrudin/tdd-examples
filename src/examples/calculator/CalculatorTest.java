@@ -27,4 +27,11 @@ class CalculatorTest {
 
         assertEquals(3, result);
     }
+
+    @Test
+    void multiplyCorrectly() {
+        result = calc.multiply(5).build();
+
+        assertEquals(25, result);
+    }
 }

@@ -18,6 +18,11 @@ public class Calculator implements Compute {
     }
 
     @Override
+    public Compute multiply(int multiplier) {
+        return new Calculator(num * multiplier);
+    }
+
+    @Override
     public int build() {
         return num;
     }

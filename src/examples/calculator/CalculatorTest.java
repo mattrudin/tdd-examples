@@ -8,8 +8,18 @@ class CalculatorTest {
     @Test
     void addsCorrectly() {
         Compute calc = new Calculator(5);
+
         int result = calc.add(7).build();
 
         assertEquals(12, result);
+    }
+
+    @Test
+    void subtractCorrectly() {
+        Compute calc = new Calculator(5);
+
+        int result = calc.subtract(2).build();
+
+        assertEquals(3, result);
     }
 }

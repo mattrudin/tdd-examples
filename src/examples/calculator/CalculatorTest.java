@@ -1,24 +1,29 @@
 package examples.calculator;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CalculatorTest {
+    private Compute calc;
+    private int result;
+
+    @BeforeEach
+    void create() {
+        calc = new Calculator(5);
+    }
+
     @Test
     void addsCorrectly() {
-        Compute calc = new Calculator(5);
-
-        int result = calc.add(7).build();
+        result = calc.add(7).build();
 
         assertEquals(12, result);
     }
 
     @Test
     void subtractCorrectly() {
-        Compute calc = new Calculator(5);
-
-        int result = calc.subtract(2).build();
+        result = calc.subtract(2).build();
 
         assertEquals(3, result);
     }

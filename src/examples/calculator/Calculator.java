@@ -1,29 +1,34 @@
 package examples.calculator;
 
 public class Calculator implements Compute {
-    private final int num;
+    private final float num;
 
-    public Calculator(int num) {
+    public Calculator(float num) {
         this.num = num;
     }
 
     @Override
-    public Compute add(int addend) {
+    public Compute add(float addend) {
         return new Calculator(num + addend);
     }
 
     @Override
-    public Compute subtract(int subtrahend) {
+    public Compute subtract(float subtrahend) {
         return new Calculator(num - subtrahend);
     }
 
     @Override
-    public Compute multiply(int multiplier) {
+    public Compute multiply(float multiplier) {
         return new Calculator(num * multiplier);
     }
 
     @Override
-    public int build() {
+    public Compute divide(float divisor) {
+        return new Calculator(num / divisor);
+    }
+
+    @Override
+    public float equals() {
         return num;
     }
 }

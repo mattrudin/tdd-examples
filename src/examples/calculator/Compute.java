@@ -1,8 +1,9 @@
 package examples.calculator;
 
 public interface Compute {
-    public Compute add(int addend);
-    public Compute subtract(int subtrahend);
-    public Compute multiply(int multiplier);
-    public int build();
+    public Compute add(float addend);
+    public Compute subtract(float subtrahend);
+    public Compute multiply(float multiplier);
+    public Compute divide(float divisor);
+    public float equals();
 }

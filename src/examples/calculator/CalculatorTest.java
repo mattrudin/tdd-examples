@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CalculatorTest {
     private Compute calcWithWholeNumber;
@@ -87,5 +88,12 @@ class CalculatorTest {
         result = calcWithRationalNumber.divide(2).equals();
 
         assertEquals(expected, result);
+    }
+
+    @Test
+    void divideByZero() {
+        assertThrows(ArithmeticException.class, () ->
+                calcWithRationalNumber.divide(0)
+        );
     }
 }

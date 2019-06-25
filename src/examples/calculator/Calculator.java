@@ -1,5 +1,7 @@
 package examples.calculator;
 
+import javax.crypto.AEADBadTagException;
+
 public class Calculator implements Compute {
     private final float num;
 
@@ -24,6 +26,9 @@ public class Calculator implements Compute {
 
     @Override
     public Compute divide(float divisor) {
+        if (divisor == 0) {
+            throw new ArithmeticException();
+        }
         return new Calculator(num / divisor);
     }
 

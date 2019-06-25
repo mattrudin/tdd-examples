@@ -9,6 +9,7 @@ class CalculatorTest {
     private Compute calcWithWholeNumber;
     private Compute calcWithRationalNumber;
     private float result;
+    private float expected;
 
     @BeforeEach
     void create() {
@@ -18,57 +19,73 @@ class CalculatorTest {
 
     @Test
     void addWholeNumberCorrectly() {
+        expected = 13;
+
         result = calcWithWholeNumber.add(7).equals();
 
-        assertEquals(13, result);
+        assertEquals(expected, result);
     }
 
     @Test
     void addRationalNumberCorrectly() {
+        expected = 12.5f;
+
         result = calcWithRationalNumber.add(7).equals();
 
-        assertEquals(12.5, result);
+        assertEquals(expected, result);
     }
 
     @Test
     void subtractWholeNumberCorrectly() {
+        expected = 4;
+
         result = calcWithWholeNumber.subtract(2).equals();
 
-        assertEquals(4, result);
+        assertEquals(expected, result);
     }
 
     @Test
     void subtractRationalNumberCorrectly() {
+        expected = 3.5f;
+
         result = calcWithRationalNumber.subtract(2).equals();
 
-        assertEquals(3.5, result);
+        assertEquals(expected, result);
     }
 
     @Test
     void multiplyWholeNumberCorrectly() {
+        expected = 30;
+
         result = calcWithWholeNumber.multiply(5).equals();
 
-        assertEquals(30, result);
+        assertEquals(expected, result);
     }
 
     @Test
     void multiplyRationalNumberCorrectly() {
+        expected = 27.5f;
+
         result = calcWithRationalNumber.multiply(5).equals();
 
-        assertEquals(27.5, result);
+        assertEquals(expected, result);
     }
 
     @Test
     void divideWholeNumberCorrectly() {
+        expected = 3;
+
         result = calcWithWholeNumber.divide(2).equals();
 
-        assertEquals(3, result);
+        assertEquals(expected, result);
     }
 
     @Test
     void divideRationalNumberCorrectly() {
+        expected = 2.75f;
+
         result = calcWithRationalNumber.divide(2).equals();
 
-        assertEquals(2.75, result);
+        assertEquals(expected, result);
     }
 }

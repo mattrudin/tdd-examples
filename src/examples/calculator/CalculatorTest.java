@@ -7,85 +7,116 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CalculatorTest {
-    private Compute calcWithWholeNumber;
-    private Compute calcWithRationalNumber;
+    private Compute calcWithPositiveWholeNumber;
+    private Compute calcWithPositiveRationalNumber;
+    private Compute calcWithNegativeWholeNumber;
+    private Compute calcWithNegativeRationalNumber;
     private float result;
     private float expected;
 
     @BeforeEach
     void create() {
-        calcWithWholeNumber = new Calculator(6);
-        calcWithRationalNumber = new Calculator(5.5f);
+        calcWithPositiveWholeNumber = new Calculator(6);
+        calcWithPositiveRationalNumber = new Calculator(5.5f);
+        calcWithNegativeWholeNumber = new Calculator(-6);
+        calcWithNegativeRationalNumber = new Calculator(-5.5f);
     }
 
     @Test
-    void addWholeNumberCorrectly() {
+    void addPositiveWholeNumberCorrectly() {
         expected = 13;
 
-        result = calcWithWholeNumber.add(7).equals();
+        result = calcWithPositiveWholeNumber.add(7).equals();
 
         assertEquals(expected, result);
     }
 
     @Test
-    void addRationalNumberCorrectly() {
+    void addPositiveRationalNumberCorrectly() {
         expected = 12.5f;
 
-        result = calcWithRationalNumber.add(7).equals();
+        result = calcWithPositiveRationalNumber.add(7).equals();
 
         assertEquals(expected, result);
     }
 
     @Test
-    void subtractWholeNumberCorrectly() {
+    void addNegativeWholeNumberCorrectly() {
+        expected = -3;
+
+        result = calcWithNegativeWholeNumber.add(3).equals();
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void addTwoNegativeWholeNumbersCorrectly() {
+        expected = -9;
+
+        result = calcWithNegativeWholeNumber.add(-3).equals();
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void addNegativeRationalNumberCorrectly() {
+        expected = -3;
+
+        result = calcWithNegativeRationalNumber.add(2.5f).equals();
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void subtractPositiveWholeNumberCorrectly() {
         expected = 4;
 
-        result = calcWithWholeNumber.subtract(2).equals();
+        result = calcWithPositiveWholeNumber.subtract(2).equals();
 
         assertEquals(expected, result);
     }
 
     @Test
-    void subtractRationalNumberCorrectly() {
+    void subtractPositiveRationalNumberCorrectly() {
         expected = 3.5f;
 
-        result = calcWithRationalNumber.subtract(2).equals();
+        result = calcWithPositiveRationalNumber.subtract(2).equals();
 
         assertEquals(expected, result);
     }
 
     @Test
-    void multiplyWholeNumberCorrectly() {
+    void multiplyPositiveWholeNumberCorrectly() {
         expected = 30;
 
-        result = calcWithWholeNumber.multiply(5).equals();
+        result = calcWithPositiveWholeNumber.multiply(5).equals();
 
         assertEquals(expected, result);
     }
 
     @Test
-    void multiplyRationalNumberCorrectly() {
+    void multiplyPositiveRationalNumberCorrectly() {
         expected = 27.5f;
 
-        result = calcWithRationalNumber.multiply(5).equals();
+        result = calcWithPositiveRationalNumber.multiply(5).equals();
 
         assertEquals(expected, result);
     }
 
     @Test
-    void divideWholeNumberCorrectly() {
+    void dividePositiveWholeNumberCorrectly() {
         expected = 3;
 
-        result = calcWithWholeNumber.divide(2).equals();
+        result = calcWithPositiveWholeNumber.divide(2).equals();
 
         assertEquals(expected, result);
     }
 
     @Test
-    void divideRationalNumberCorrectly() {
+    void dividePositiveRationalNumberCorrectly() {
         expected = 2.75f;
 
-        result = calcWithRationalNumber.divide(2).equals();
+        result = calcWithPositiveRationalNumber.divide(2).equals();
 
         assertEquals(expected, result);
     }
@@ -93,7 +124,7 @@ class CalculatorTest {
     @Test
     void divideByZero() {
         assertThrows(ArithmeticException.class, () ->
-                calcWithRationalNumber.divide(0)
+                calcWithPositiveRationalNumber.divide(0)
         );
     }
 }

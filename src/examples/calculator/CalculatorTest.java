@@ -127,4 +127,22 @@ class CalculatorTest {
                 calcWithPositiveRationalNumber.divide(0)
         );
     }
+
+    @Test
+    void takesCorrectSquareRootOfWholeNumber() {
+        expected = 2.45f;
+
+        result = calcWithPositiveWholeNumber.root().equals();
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void takesCorrectSquareRootOfRationalNumber() {
+        expected = 2.35f;
+
+        result = calcWithPositiveRationalNumber.root().equals();
+
+        assertEquals(expected, result);
+    }
 }

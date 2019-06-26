@@ -1,6 +1,7 @@
 package examples.calculator;
 
 import javax.crypto.AEADBadTagException;
+import java.math.BigDecimal;
 
 public class Calculator implements Compute {
     private final float num;
@@ -30,6 +31,15 @@ public class Calculator implements Compute {
             throw new ArithmeticException();
         }
         return new Calculator(num / divisor);
+    }
+
+    @Override
+    public Compute root() {
+        return new Calculator(round((float) Math.sqrt(num), 2));
+    }
+
+    private static float round(float number, int decimalPlace) {
+        return BigDecimal.valueOf(number).setScale(decimalPlace,BigDecimal.ROUND_HALF_UP).floatValue();
     }
 
     @Override

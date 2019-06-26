@@ -145,4 +145,31 @@ class CalculatorTest {
 
         assertEquals(expected, result);
     }
+
+    @Test
+    void squaresPositiveWholeNumberCorrectly() {
+        expected = 36;
+
+        result = calcWithPositiveWholeNumber.square().equals();
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void squaresPositiveRationalNumberCorrectly() {
+        expected = 30.25f;
+
+        result = calcWithPositiveRationalNumber.square().equals();
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void squaresNegativeWholeNumberCorrectly() {
+        expected = 36;
+
+        result = calcWithNegativeWholeNumber.square().equals();
+
+        assertEquals(expected, result);
+    }
 }

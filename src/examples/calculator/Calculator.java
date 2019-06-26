@@ -38,6 +38,11 @@ public class Calculator implements Compute {
         return new Calculator(round((float) Math.sqrt(num), 2));
     }
 
+    @Override
+    public Compute square() {
+        return new Calculator(num * num);
+    }
+
     private static float round(float number, int decimalPlace) {
         return BigDecimal.valueOf(number).setScale(decimalPlace,BigDecimal.ROUND_HALF_UP).floatValue();
     }

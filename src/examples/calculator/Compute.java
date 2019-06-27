@@ -7,5 +7,6 @@ public interface Compute {
     public Compute divide(float divisor);
     public Compute root();
     public Compute square();
+    public Compute toPower(float exponent);
     public float equals();
 }

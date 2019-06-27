@@ -1,10 +1,10 @@
 package examples.calculator;
 
-import javax.crypto.AEADBadTagException;
 import java.math.BigDecimal;
 
 public class Calculator implements Compute {
     private final float num;
+    private final int DECIMAL_PLACE = 2;
 
     public Calculator(float num) {
         this.num = num;
@@ -35,12 +35,17 @@ public class Calculator implements Compute {
 
     @Override
     public Compute root() {
-        return new Calculator(round((float) Math.sqrt(num), 2));
+        return new Calculator(round((float) Math.sqrt(num), DECIMAL_PLACE));
     }
 
     @Override
     public Compute square() {
         return new Calculator(num * num);
+    }
+
+    @Override
+    public Compute toPower(float exponent) {
+        return new Calculator(round((float) Math.pow(num, exponent), DECIMAL_PLACE));
     }
 
     private static float round(float number, int decimalPlace) {

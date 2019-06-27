@@ -172,4 +172,22 @@ class CalculatorTest {
 
         assertEquals(expected, result);
     }
+
+    @Test
+    void calculatesToPowerNPositiveWholeNumberCorrectly() {
+        expected = 1296;
+
+        result = calcWithPositiveWholeNumber.toPower(4).equals();
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void calculatesToPowerNPositiveRationalNumberCorrectly() {
+        expected = 166.38f;
+
+        result = calcWithPositiveRationalNumber.toPower(3).equals();
+
+        assertEquals(expected, result);
+    }
 }

@@ -35,7 +35,7 @@ public class Calculator implements Compute {
 
     @Override
     public Compute root() {
-        return new Calculator(round((float) Math.sqrt(num), DECIMAL_PLACE));
+        return new Calculator((float) Math.sqrt(num));
     }
 
     @Override
@@ -45,7 +45,12 @@ public class Calculator implements Compute {
 
     @Override
     public Compute toPower(float exponent) {
-        return new Calculator(round((float) Math.pow(num, exponent), DECIMAL_PLACE));
+        return new Calculator((float) Math.pow(num, exponent));
+    }
+
+    @Override
+    public Compute roundTo(int decimalPlace) {
+        return new Calculator(round(num, decimalPlace));
     }
 
     private static float round(float number, int decimalPlace) {

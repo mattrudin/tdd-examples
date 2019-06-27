@@ -132,7 +132,7 @@ class CalculatorTest {
     void takesCorrectSquareRootOfWholeNumber() {
         expected = 2.45f;
 
-        result = calcWithPositiveWholeNumber.root().equals();
+        result = calcWithPositiveWholeNumber.root().roundTo(2).equals();
 
         assertEquals(expected, result);
     }
@@ -141,7 +141,7 @@ class CalculatorTest {
     void takesCorrectSquareRootOfRationalNumber() {
         expected = 2.35f;
 
-        result = calcWithPositiveRationalNumber.root().equals();
+        result = calcWithPositiveRationalNumber.root().roundTo(2).equals();
 
         assertEquals(expected, result);
     }
@@ -186,7 +186,25 @@ class CalculatorTest {
     void calculatesToPowerNPositiveRationalNumberCorrectly() {
         expected = 166.38f;
 
-        result = calcWithPositiveRationalNumber.toPower(3).equals();
+        result = calcWithPositiveRationalNumber.toPower(3).roundTo(2).equals();
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void roundPositiveRationalNumberToNPlace() {
+        expected = 6;
+
+        result = calcWithPositiveRationalNumber.roundTo(0).equals();
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void roundNegativeRationalNumberToNPlace() {
+        expected = -6;
+
+        result = calcWithNegativeRationalNumber.roundTo(0).equals();
 
         assertEquals(expected, result);
     }

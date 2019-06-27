@@ -8,5 +8,6 @@ public interface Compute {
     public Compute root();
     public Compute square();
     public Compute toPower(float exponent);
+    public Compute roundTo(int decimalPlace);
     public float equals();
 }

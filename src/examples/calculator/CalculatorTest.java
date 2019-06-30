@@ -3,6 +3,8 @@ package examples.calculator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Calendar;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -223,6 +225,15 @@ class CalculatorTest {
         expected = -1.817f;
 
         result = calcWithNegativeWholeNumber.rootOf(3).roundTo(3).equals();
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void returnsRoundedPI() {
+        expected = 3.1416f;
+
+        result = Calculator.PI.roundTo(4).equals();
 
         assertEquals(expected, result);
     }

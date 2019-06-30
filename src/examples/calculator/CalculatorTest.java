@@ -208,4 +208,22 @@ class CalculatorTest {
 
         assertEquals(expected, result);
     }
+
+    @Test
+    void calculatesRootOfPositiveWholeNumberCorrectly() {
+        expected = 1.817f;
+
+        result = calcWithPositiveWholeNumber.rootOf(3).roundTo(3).equals();
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void calculatesNrootsOfNegativeWholeNumberCorrectly() {
+        expected = -1.817f;
+
+        result = calcWithNegativeWholeNumber.rootOf(3).roundTo(3).equals();
+
+        assertEquals(expected, result);
+    }
 }

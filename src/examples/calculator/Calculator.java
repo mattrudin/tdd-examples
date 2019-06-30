@@ -53,6 +53,16 @@ public class Calculator implements Compute {
         return new Calculator(round(num, decimalPlace));
     }
 
+    @Override
+    public Compute rootOf(int root) {
+        float numAbs = Math.abs(num);
+        float result = (float) Math.pow(Math.E, Math.log(numAbs) / root);
+        if (num > 0) {
+            return new Calculator(result);
+        }
+        return new Calculator(- result);
+    }
+
     private static float round(float number, int decimalPlace) {
         return BigDecimal.valueOf(number).setScale(decimalPlace,BigDecimal.ROUND_HALF_UP).floatValue();
     }

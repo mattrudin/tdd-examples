@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 
 public class Calculator implements Compute {
     private final float num;
-    private final int DECIMAL_PLACE = 2;
     public static final Compute PI = new Calculator((float) Math.PI);
 
     public Calculator(float num) {

@@ -237,4 +237,31 @@ class CalculatorTest {
 
         assertEquals(expected, result);
     }
+
+    @Test
+    void calculateModOfPositiveWholeNumber() {
+        expected = 2;
+
+        result = calcWithPositiveWholeNumber.mod(4).equals();
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void calculateModOfPositiveRationalNumber() {
+        expected = 0.5f;
+
+        result = calcWithPositiveRationalNumber.mod(5).equals();
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void calculateModWithZero() {
+        expected = 6;
+
+        result = calcWithPositiveWholeNumber.mod(0).equals();
+
+        assertEquals(expected, result);
+    }
 }

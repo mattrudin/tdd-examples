@@ -63,6 +63,14 @@ public class Calculator implements Compute {
         return new Calculator(- result);
     }
 
+    @Override
+    public Compute mod(int modulus) {
+        if (modulus == 0) {
+            return new Calculator(num);
+        }
+        return new Calculator(num % modulus);
+    }
+
     private static float round(float number, int decimalPlace) {
         return BigDecimal.valueOf(number).setScale(decimalPlace,BigDecimal.ROUND_HALF_UP).floatValue();
     }

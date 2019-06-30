@@ -10,5 +10,6 @@ public interface Compute {
     public Compute toPower(float exponent);
     public Compute roundTo(int decimalPlace);
     public Compute rootOf(int root);
+    public Compute mod(int modulus);
     public float equals();
 }
